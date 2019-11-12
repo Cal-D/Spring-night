@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 //테이블을 표현해줄 객체 
-@XmlRootElement
+//@XmlRootElement
 public class Menus {
 	private List<Menu> menu;
 	
@@ -22,7 +22,7 @@ public class Menus {
 	public List<Menu> getMenu() {
 		return menu;
 	}
-	@XmlElement
+//	@XmlElement
 	public void setMenu(List<Menu> menu) {
 		this.menu = menu;
 	}

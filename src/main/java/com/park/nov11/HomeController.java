@@ -24,7 +24,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/menu.get", method = RequestMethod.GET,
-			produces = "application/xml; charset=utf-8")
+			produces = "application/json; charset=utf-8")
 	public @ResponseBody Menus menuGet(HttpServletRequest req) {
 		mDAO.getMenu(req);
 		return mDAO.getMenuXML();

@@ -7,9 +7,34 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	$(function () {
+		$("h1").click(function(){
+			$.ajax({
+				url : "menu.get",
+				success : function(xml){
+					var ar = xml.menu;
+					$.each(ar,function(i,m){
+						alert(m.m_name);
+						alert(ar[i].m_price);
+					});						
+					
+				/*	$(xml).find("menu").each(function(i,m){
+						alert($(this).find("m_name").text());
+					});*/
+				}  
+			});
+		});
+	
+	});
+	
+
+</script>
 <title>Insert title here</title>
 </head>
 <body>
+<h1>눌러보시오</h1>
 	<c:forEach var= "m" items ="${menus}">
 		${m.m_name } :
 		<fmt:formatNumber value="${m.m_price}" type="currency"/> 
